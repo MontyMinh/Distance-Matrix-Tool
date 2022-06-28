@@ -80,8 +80,8 @@ class DistanceMatrix:
 
                 try:  # Try to get distance
                     distance = gmaps.directions(
-                        start=factory,
-                        end=customer)[0]['legs'][0]['distance']['value']
+                        origin=factory,
+                        destination=customer)[0]['legs'][0]['distance']['value']
                     cls.distance_list = np.append(cls.distance_list, distance)
 
                 except:  # If not working, break, return the (fac, cus)
